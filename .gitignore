@@ -48,3 +48,6 @@ src_file_list*.txt
 
 # pkg-config generated files --------------------
 *.pc
+
+# Logs ------------------------------------------
+*.log
