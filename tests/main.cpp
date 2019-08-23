@@ -28,8 +28,8 @@ static void print_usage(const char * const pProgName)
 /* ----------------------------------------------------- */
 /* main function --------------------------------------- */
 /* ----------------------------------------------------- */
-int main(const int argc, const char * const * const argv) {
-
+int main(const int argc, const char * const * const argv)
+{
     /* Test function initialization */
     int32_t lTestNum;
     int16_t lResult = 0;
