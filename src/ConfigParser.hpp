@@ -4,8 +4,8 @@
  * @file ConfigParser.hpp
  */
 
-#ifndef EZW_TOOLS_CSVPARSER_HPP
-#define EZW_TOOLS_CSVPARSER_HPP
+#ifndef CONFIGPARSER_HPP
+#define CONFIGPARSER_HPP
 
 /* Includes -------------------------------------------- */
 #include <fstream>
@@ -27,4 +27,4 @@ class ConfigParser {
         static void                     replaceInString(std::string &str, const std::string &from, const std::string &to);
 };
 
-#endif /* EZW_TOOLS_CSVPARSER_HPP */
+#endif /* CONFIGPARSER_HPP */
