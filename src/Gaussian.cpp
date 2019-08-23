@@ -18,15 +18,15 @@
 /* Con/Destructors */
 Gaussian::Gaussian(const int    &pSamplerate,
                    const float  &pAmplitude,
-                   const float  &pStddev,
+                   const float  &pStdDev,
                    const float  &pMean) :
     mSampleRate(pSamplerate),
     mAmplitude(pAmplitude),
-    mStddev(pStddev),
+    mStdDev(pStdDev),
     mMean(pMean)
 {
     /* Default constructor */
-    calculate_points();
+    calculatePoints();
 }
 
 Gaussian::~Gaussian()
@@ -64,9 +64,9 @@ float Gaussian::getMean(void) const
     return mMean;
 }
 
-float Gaussian::getStddev(void) const
+float Gaussian::getStdDev(void) const
 {
-    return mStddev;
+    return mStdDev;
 }
 
 float Gaussian::getSamplerate(void) const
@@ -131,10 +131,10 @@ void Gaussian::vectorToFile(const std::string &pFilename)
 //* Misc. Private methods */
 float Gaussian::gaussFunction(const float &pX)
 {
-    return getAmplitude() * exp(-pow(pX - getMean(), 2) / (2 * pow(getStddev(), 2)));
+    return getAmplitude() * exp(-pow(pX - getMean(), 2) / (2 * pow(getStdDev(), 2)));
 }
 
-void Gaussian::calculate_points(void)
+void Gaussian::calculatePoints(void)
 {
     /* Here goes the algorithm that calculated the points
      * and adds them to the :vector
@@ -142,7 +142,7 @@ void Gaussian::calculate_points(void)
 
     /*
      * Lets recall that a Gaussian function is of the form :
-     *  y(x) = A.exp[ (-x-mean)^2 / (2.stddev^2) ]		(1)
+     *  y(x) = A.exp[ (-x-mean)^2 / (2.stdDev^2) ]		(1)
      *
      * Wolfram Alpha solved the following equation
      *  exp(-((3.5/2*10^-6)^2)/(2*y^2)) = 0.5			(2)
@@ -155,11 +155,11 @@ void Gaussian::calculate_points(void)
      * gaussian can always be flattened by a factor afterwards.
      *
      * For a 3.5 us interval in between the two 50% of amp points
-     * we need a +1.48631*10^6 stddev. This will be our default value
+     * we need a +1.48631*10^6 stdDev. This will be our default value
      */
 
-    float   lElement = .0f;
-    int     i       = 0;        /* x in the math fomula */
+    float   lElement    = .0f;
+    int     i           = 0;    /* x in the math fomula */
 
     float interval = 1.0f / (float)getSamplerate();
 
