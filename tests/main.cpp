@@ -16,6 +16,7 @@
 /* Notes ----------------------------------------------- */
 
 /* Variable declaration -------------------------------- */
+
 /* Support functions ----------------------------------- */
 static void print_usage(const char * const pProgName)
 {
