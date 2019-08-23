@@ -22,14 +22,12 @@ include_directories(
 )
 
 # Source files --------------------------------------------
-file(GLOB_RECURSE SOURCES
-    ${CMAKE_SOURCE_DIR}/src/*.c
-    ${CMAKE_SOURCE_DIR}/src/*.cpp
+set(SOURCES
+    ${CMAKE_SOURCE_DIR}/src/Gaussian.cpp
 )
 
 file(GLOB_RECURSE TEST_SOURCES
-    ${CMAKE_SOURCE_DIR}/tests/*.c
-    ${CMAKE_SOURCE_DIR}/tests/*.cpp
+    ${CMAKE_SOURCE_DIR}/tests/main.cpp
 )
 
 # Target definition ---------------------------------------
