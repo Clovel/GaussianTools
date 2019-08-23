@@ -17,14 +17,23 @@ include_directories(
 )
 
 # Source files --------------------------------------------
-file(GLOB_RECURSE SOURCES
-    ${CMAKE_SOURCE_DIR}/src/*.c
-    ${CMAKE_SOURCE_DIR}/src/*.cpp
+set(SOURCES
+    ${CMAKE_SOURCE_DIR}/src/Gaussian.cpp
+)
+
+set(UTILITY_SOURCES
+    ${CMAKE_SOURCE_DIR}/src/main.cpp
+    ${CMAKE_SOURCE_DIR}/src/ConfigParser.cpp
 )
 
 # Target definition ---------------------------------------
 add_library(${CMAKE_PROJECT_NAME} SHARED
     ${SOURCES}
+)
+
+add_executable(${CMAKE_PROJECT_NAME}Utility
+    ${SOURCES}
+    ${UTILITY_SOURCES}
 )
 
 #----------------------------------------------------------------------------
