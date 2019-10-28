@@ -11,6 +11,9 @@
 /* System */
 #include <iostream>
 
+/* C System */
+#include <cstring>
+
 /* Defines --------------------------------------------- */
 
 /* Notes ----------------------------------------------- */
@@ -35,7 +38,7 @@ int main(const int argc, const char * const * const argv)
     int32_t lTestNum;
     int16_t lResult = 0;
 
-    if ((argc < 2) || (strcmp(argv[1], "--help") == 0)) {
+    if ((argc < 2) || (std::strcmp(argv[1], "--help") == 0)) {
         print_usage(argv[0]);
         return -1;
     }
