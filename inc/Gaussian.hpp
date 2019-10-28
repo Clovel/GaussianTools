@@ -9,6 +9,7 @@
 /* Includes -------------------------------------------- */
 /* System */
 #include <vector>
+#include <string>
 
 /* C System */
 #include <cmath>
