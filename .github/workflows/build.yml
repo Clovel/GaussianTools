@@ -18,6 +18,17 @@ jobs:
     - name: Create build directory
       run: |
         mkdir build
+
+    - name: Check for/Install pkg-config on macOS
+      if: matrix.os == 'macOS-latest'
+      run: | 
+        if [[ $(command -v pkg-config) == "" ]]; then
+        echo "pkg-config not found, installing it w/ Homebrew"
+        brew update && brew install pkg-config
+        else
+        echo "pkg-config found !"
+        fi
+
     - name: CMake generation
       working-directory: build
       run: cmake ..
