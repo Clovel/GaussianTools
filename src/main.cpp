@@ -19,6 +19,7 @@
 /* C System */
 #include <cstdlib>
 #include <cmath>
+#include <cstring>
 
 /* Defines --------------------------------------------- */
 #ifndef UTILITY_TEST
@@ -35,7 +36,7 @@ static void print_usage(const char * const pProgName)
 /* Main routine ---------------------------------------- */
 int main(const int argc, char const * const *argv)
 {
-    if ((2 > argc) || (0 == strcmp("--help", argv[1]))) {
+    if ((2 > argc) || (0 == std::strcmp("--help", argv[1]))) {
         print_usage(argv[0]);
         exit(EXIT_FAILURE);
     }
